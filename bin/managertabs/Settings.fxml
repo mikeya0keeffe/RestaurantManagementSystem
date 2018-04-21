@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managertabs.SettingsController">
+   <children>
+      <HBox layoutX="324.0" layoutY="188.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox spacing="20.0">
+               <children>
+                  <Button fx:id="save" mnemonicParsing="false" onAction="#saveData" prefHeight="27.0" prefWidth="112.0" text="Save" />
+                  <HBox prefHeight="30.0" prefWidth="438.0" spacing="20.0">
+                     <children>
+                        <Label fx:id="tableNoLabel" prefHeight="25.0" prefWidth="164.0" text="Number of Tables">
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="tableNo" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="438.0" spacing="20.0">
+                     <children>
+                        <Label fx:id="tableNoLabel1" prefHeight="25.0" prefWidth="60.0" text="Rows">
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="rows" prefHeight="25.0" prefWidth="60.0" />
+                        <Label prefHeight="25.0" prefWidth="60.0" text="Columns" />
+                        <TextField fx:id="columns" prefHeight="25.0" prefWidth="60.0" />
+                     </children>
+                  </HBox>
+                  <TableView fx:id="staffData" onMouseClicked="#showDataLog" prefHeight="250.0" prefWidth="331.0">
+                     <columns>
+                        <TableColumn fx:id="lastName" minWidth="-1.0" prefWidth="115.0" text="Last Name" />
+                        <TableColumn fx:id="firstName" minWidth="-1.0" prefWidth="115.0" text="First Name" />
+                        <TableColumn fx:id="position" minWidth="-1.0" prefWidth="115.0" text="Position" />
+                        <TableColumn fx:id="salary" maxWidth="-1.0" minWidth="125.0" prefWidth="115.0" text="Salary" />
+                     </columns>
+                  </TableView>
+                  <HBox prefHeight="41.0" prefWidth="460.0">
+                     <children>
+                        <TextField fx:id="newLastName" promptText="Last name" />
+                        <TextField fx:id="newFirstName" promptText="First name" />
+                        <ComboBox fx:id="Position" prefWidth="150.0" promptText="Position" />
+                        <TextField fx:id="newSalary" promptText="Salary" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="newStaff" mnemonicParsing="false" onAction="#addStaffMember" prefHeight="30.0" prefWidth="200.0" text="Add new staff member">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                        <Button fx:id="deleteStaff" mnemonicParsing="false" onAction="#deleteSelectedStaff" prefHeight="30.0" prefWidth="200.0" text="Delete selected staff member">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="500.0" prefWidth="341.0" spacing="10.0">
+               <children>
+                  <HBox prefHeight="28.0" prefWidth="340.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="122.0" text="Restaurant name:" />
+                        <TextField fx:id="name" onInputMethodTextChanged="#setName" prefHeight="27.0" prefWidth="195.0" />
+                     </children>
+                  </HBox>
+                  <Label prefHeight="25.0" prefWidth="200.0" text="Edit menu:" />
+                  <HBox prefHeight="29.0" prefWidth="340.0" spacing="20.0">
+                     <children>
+                        <TextField fx:id="priceSet" prefHeight="25.0" prefWidth="100.0" promptText="Price" />
+                        <TextField fx:id="itemSet" prefHeight="27.0" prefWidth="218.0" promptText="New item" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="64.0" prefWidth="340.0" spacing="20.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                           <children>
+                              <ComboBox fx:id="courseSet" prefHeight="25.0" prefWidth="115.0" promptText="Course" />
+                              <Button mnemonicParsing="false" onAction="#addMenuItem" prefHeight="25.0" prefWidth="118.0" text="Add item" />
+                           </children>
+                        </VBox>
+                        <TextArea fx:id="descriptionSet" prefHeight="64.0" prefWidth="220.0" promptText="Description" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="340.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#removeMenuItem" prefHeight="25.0" prefWidth="100.0" text="Delete" />
+                        <ComboBox fx:id="menuItems" prefHeight="25.0" prefWidth="218.0" promptText="Select item" />
+                     </children>
+                  </HBox>
+                  <Label prefHeight="25.0" prefWidth="296.0" text="Edit staff login details: (Select from the left)" />
+                  <HBox prefHeight="29.0" prefWidth="340.0">
+                     <children>
+                        <TextField fx:id="userTxt" promptText="Username" />
+                        <TextField fx:id="passTxt" promptText="Password" />
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#setUserPass" prefHeight="27.0" prefWidth="165.0" text="Set Login details" />
+                  <Label prefHeight="25.0" prefWidth="296.0" text="Staff activity:" />
+                  <TextArea fx:id="dataTracker" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

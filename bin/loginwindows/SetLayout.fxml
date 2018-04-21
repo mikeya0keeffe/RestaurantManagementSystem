@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="welcome" minHeight="500.0" prefHeight="600.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginwindows.SetLayoutController">
+   <children>
+      <VBox layoutX="16.0" layoutY="38.0" prefHeight="567.0" prefWidth="469.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label prefHeight="37.0" prefWidth="345.0" text="Welcome, please enter your restaurant details below:" />
+            <HBox prefHeight="30.0" prefWidth="438.0" spacing="50.0">
+               <children>
+                  <Label fx:id="tableNoLabel" prefHeight="25.0" prefWidth="164.0" text="Number of Tables">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tableNo" />
+               </children>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="438.0" spacing="50.0">
+               <children>
+                  <Label fx:id="tableNoLabel1" prefHeight="25.0" prefWidth="70.0" text="Rows">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="rows" prefHeight="27.0" prefWidth="97.0" />
+                  <Label prefHeight="17.0" prefWidth="66.0" text="Columns" />
+                  <TextField fx:id="columns" prefHeight="27.0" prefWidth="95.0" />
+               </children>
+            </HBox>
+            <VBox prefHeight="300.0" prefWidth="438.0">
+               <children>
+                  <TableView fx:id="staffData" prefHeight="250.0" prefWidth="331.0">
+                    <columns>
+                      <TableColumn fx:id="lastName" minWidth="-1.0" prefWidth="115.0" text="Last Name" />
+                      <TableColumn fx:id="firstName" minWidth="-1.0" prefWidth="115.0" text="First Name" />
+                        <TableColumn fx:id="position" minWidth="-1.0" prefWidth="115.0" text="Position" />
+                        <TableColumn fx:id="salary" maxWidth="-1.0" minWidth="125.0" prefWidth="115.0" text="Salary" />
+                    </columns>
+                  </TableView>
+                  <HBox prefHeight="41.0" prefWidth="460.0">
+                     <children>
+                        <TextField fx:id="newLastName" promptText="Last name" />
+                        <TextField fx:id="newFirstName" promptText="First name" />
+                        <ComboBox fx:id="Position" prefWidth="150.0" promptText="Position" />
+                        <TextField fx:id="newSalary" promptText="Salary" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+                     <children>
+                        <Button fx:id="newStaff" mnemonicParsing="false" onAction="#addStaffMember" prefHeight="30.0" prefWidth="200.0" text="Add new staff member">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                        <Button fx:id="deleteStaff" mnemonicParsing="false" onAction="#deleteSelectedStaff" prefHeight="30.0" prefWidth="200.0" text="Delete selected staff member">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="40.0">
+                     <children>
+                        <Button fx:id="saveContinue" mnemonicParsing="false" onAction="#setUpRestaurant" prefHeight="30.0" prefWidth="200.0" text="Save and continue" />
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Load from file" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="643.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managertabs.OrdersController">
+   <children>
+      <VBox layoutX="368.0" layoutY="122.0" prefHeight="643.0" prefWidth="780.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="orderData" prefHeight="466.0" prefWidth="780.0">
+              <columns>
+                <TableColumn fx:id="table" minWidth="130.0" prefWidth="130.0" text="Table" />
+                <TableColumn fx:id="dateTime" minWidth="130.0" prefWidth="75.0" text="Date/Time" />
+                  <TableColumn fx:id="items" minWidth="130.0" prefWidth="75.0" text="Items" />
+                  <TableColumn fx:id="cost" minWidth="130.0" prefWidth="75.0" text="Total cost" />
+                  <TableColumn fx:id="requests" minWidth="130.0" prefWidth="75.0" text="Special requests" />
+                  <TableColumn fx:id="comments" minWidth="130.0" prefWidth="75.0" text="Comments" />
+              </columns>
+            </TableView>
+            <HBox>
+               <children>
+                  <VBox minWidth="195.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#deleteOrder" prefHeight="27.0" prefWidth="150.0" text="Delete order" />
+                        <Button mnemonicParsing="false" onAction="#editOrder" prefHeight="27.0" prefWidth="150.0" text="Edit order in Layout" />
+                     </children>
+                  </VBox>
+                  <VBox minWidth="195.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#exportOrders" prefHeight="27.0" prefWidth="150.0" text="Export current list" />
+                        <Button mnemonicParsing="false" onAction="#importOrders" prefHeight="27.0" prefWidth="150.0" text="Import order list" />
+                        <Button mnemonicParsing="false" onAction="#searchOrders" prefWidth="150.0" text="Search orders" />
+                     </children>
+                  </VBox>
+                  <VBox minWidth="195.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                     <children>
+                        <ComboBox fx:id="searchOptions" prefWidth="150.0" promptText="Select Field" />
+                        <HBox prefHeight="29.0" prefWidth="195.0">
+                           <children>
+                              <Label text="Date from: " />
+                              <TextField fx:id="dateFrom" prefHeight="19.0" prefWidth="117.0" promptText="MM/DD/YY" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="37.0" prefWidth="195.0">
+                           <children>
+                              <Label text="Time from: " />
+                              <TextField fx:id="timeFrom" prefHeight="27.0" prefWidth="117.0" promptText="HH:MM:SS" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="37.0" prefWidth="195.0">
+                           <children>
+                              <Label text="Lower cost" />
+                              <TextField fx:id="lowerCost" prefHeight="27.0" prefWidth="117.0" promptText="£XX.xx" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox minWidth="195.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                     <children>
+                        <TextField fx:id="keywords" promptText="Keywords" />
+                        <HBox prefHeight="23.0" prefWidth="195.0">
+                           <children>
+                              <Label text="Date until:" />
+                              <TextField fx:id="dateUntil" prefHeight="27.0" prefWidth="118.0" promptText="MM/DD/YY" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="195.0">
+                           <children>
+                              <Label text="Time until:" />
+                              <TextField fx:id="timeUntil" prefHeight="27.0" prefWidth="118.0" promptText="HH:MM:SS" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="195.0">
+                           <children>
+                              <Label text="Upper cost" />
+                              <TextField fx:id="upperCost" prefHeight="27.0" prefWidth="118.0" promptText="£XX.xx" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</AnchorPane>

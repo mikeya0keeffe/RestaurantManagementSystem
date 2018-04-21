@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<AnchorPane prefHeight="765.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employeetabs.EmployeeLayoutController">
+<children>
+<Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table1" />
+<Button layoutX="115.0" layoutY="20.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table2" />
+<Button layoutX="210.0" layoutY="20.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table3" />
+<Button layoutX="305.0" layoutY="20.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table4" />
+<Button layoutX="20.0" layoutY="115.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table5" />
+<Button layoutX="115.0" layoutY="115.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table6" />
+<Button layoutX="210.0" layoutY="115.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table7" />
+<Button layoutX="305.0" layoutY="115.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table8" />
+<Button layoutX="20.0" layoutY="210.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table9" />
+<Button layoutX="115.0" layoutY="210.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table10" />
+<Button layoutX="210.0" layoutY="210.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table11" />
+<Button layoutX="305.0" layoutY="210.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table12" />
+<Button layoutX="20.0" layoutY="305.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table13" />
+<Button layoutX="115.0" layoutY="305.0" mnemonicParsing="false" onAction="#buttonPushed" prefHeight="75.0" prefWidth="75.0" text="Table14" />
+<ComboBox fx:id="menuItems" layoutX="440.0" layoutY="440.0" prefHeight="25.0" prefWidth="170.0" />
+<Button layoutX="440.0" layoutY="485.0" mnemonicParsing="false" onAction="#addItem" prefHeight="25.0" prefWidth="170.0" text="Add item" />
+<Button layoutX="650.0" layoutY="440.0" mnemonicParsing="false" onAction="#removeItem" prefHeight="25.0" prefWidth="170.0" text="Remove selected" />
+<Label fx:id="total" layoutX="650.0" layoutY="485.0" prefHeight="25.0" prefWidth="75.0" text="Total:" />
+<TableView fx:id="orderView" layoutX="440.0" layoutY="20.0" prefHeight="400.0" prefWidth="380.0">
+<columns>
+<TableColumn fx:id="item" prefWidth="117.0" text="Item" />
+<TableColumn fx:id="price" prefWidth="68.0" text="Price" />
+<TableColumn fx:id="description" prefWidth="193.0" text="Description" />
+</columns>
+</TableView>
+<Button layoutX="650.0" layoutY="720.0" onAction="#newOrder" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" text="Register order" />
+<TextArea fx:id="specialRequests" layoutX="440.0" layoutY="530.0" prefHeight="75.0" prefWidth="380.0" promptText="Special requests" />
+<TextArea fx:id="comments" layoutX="440.0" layoutY="625.0" prefHeight="75.0" prefWidth="380.0" promptText="Comments" />
+</children>
+</AnchorPane>
